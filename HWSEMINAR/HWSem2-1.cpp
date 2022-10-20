@@ -14,8 +14,9 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	int x;
-	vector <string> a = { "jhjh","Влево","Вверх","Вправо","Вниз" };
+	vector <pair <string, string> > a = { {"jhjh","   "},{"Влево","Горизонтально"},{"Вверх","Вертикально"},{"Вправо","Горизонтально"},{"Вниз","Вертикально"} };
 	cin >> x;
-	cout << a[x];
+	cout << a[x].first << endl;
+	cout << a[x].second;
 	return 0;
 }
