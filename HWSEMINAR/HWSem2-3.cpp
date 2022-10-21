@@ -15,7 +15,7 @@ int main() {
 	SetConsoleOutputCP(1251);
 	double x,y;
 	cin >> x >> y;
-	if ((x >= -1 && x <= 1) && (y <= 3 && x >= -3) && sqrt(x * x + y * y) >= 2) {
+	if ((x >= -1 && x <= 1) && (y <= 3 && y >= -3) && sqrt(x * x + y * y) >= 2) {
 		if (x == -1 || x == 1 || sqrt(x * x + y * y) == 2 || y == 3 || y == -3) {
 			cout << "На границе";
 			return 0;
