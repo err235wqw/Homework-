@@ -15,14 +15,15 @@ using namespace std;
 int main() {
 	cin.tie(0);
 	ios_base::sync_with_stdio(0);
-	long k,fact;
-	double x,j;
+	long k;
+	double x,j, fact;
 	j = 0;
 	fact = -1;
 	cin >> k >> x;
 	for (int i = 1; i <= k; i++) {
-		fact *= (i * 2 - 1) * (i * 2) * -1;
-		j +=  pow(2 * i, x) / fact;
+		fact *= (x*x)/((i * 2 - 1) * (i * 2) * -1);
+		j += fact;
+		cout << j << '\n';
 	}
 	cout << j;
 	return 0;
