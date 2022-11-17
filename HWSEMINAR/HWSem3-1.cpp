@@ -23,5 +23,5 @@ int main() {
 	long double s;
 	cin >> s;
 	cout << bb(aa(s))+2*aa(s);
-
+	return 0;
 }
