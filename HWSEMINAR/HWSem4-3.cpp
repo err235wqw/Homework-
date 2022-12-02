@@ -17,14 +17,12 @@ int main() {
 	ios_base::sync_with_stdio(0);;
 	unsigned int start_time = clock();
 	int k;
-
 	long double b,s=0,x,e,fact = 1;
 	cin >> x >> k;
 	b = x;
 	for (int i = 2; i <= k+1; i++) {
 		cout << fixed << setprecision(15) << s << ' ' << i-1 << '\n';
-		b *= (i * (i - 1) * x * x) / (fact *((i + i - 1) * (i + i)))*fact/max(1,(i-1)*(i-2));
-		fact *= (i + i - 1) * (i + i);
+		b *= (i * (i - 1) * x * x)  / ((i + i - 1) * (i + i))/max(1,(i-1)*(i-2));
 		s += b;
 		(i == 1) ? b = x : b = b ;
 	}
