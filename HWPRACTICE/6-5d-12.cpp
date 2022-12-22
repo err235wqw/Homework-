@@ -1,4 +1,5 @@
 
+
 #define _USE_MATH_DEFINES
 #include <iostream>
 #include <iomanip>
@@ -50,7 +51,7 @@ template <typename X> void SinArr(X  a, int n, int m) {
 }
 template <typename X> void SinArr(X  a, int n) {
 	for (int i = 0; i < n; i++) {
-			cin >> a[i];
+		cin >> a[i];
 	}
 }
 template <typename X> void SinArr(X** a, int n, int m) {
@@ -63,7 +64,7 @@ template <typename X> void SinArr(X** a, int n, int m) {
 }
 template <typename X> void SinArr(X* a, int n) {
 	for (int i = 0; i < n; i++) {
-			cin >> a[i];
+		cin >> a[i];
 	}
 }
 int main() {
@@ -80,14 +81,16 @@ int main() {
 	int b[50];
 	SinArr(a, n);
 	int cnt = 0;
-	for (int i = 0; i < n-cnt-1; i++) {
-		for (int j = i+1; j < n; j++) {
-			if (a[j] == a[i]) {
-				a[j] = a[j + 1];
-				cnt++;
+	set <int> s;
+	for (int i = 0; i < n; i++) {
+		while (s.count(a[i])>0&&n-cnt>i) {
+			cnt++;
+			for (int i1 = i; i1 < n; i1++) {
+				a[i1] = a[i1+1];
 			}
 		}
+		s.insert(a[i]);
 	}
-	PrintArr(a, n-cnt);
+	PrintArr(a, n - cnt);
 	return 0;
 }
